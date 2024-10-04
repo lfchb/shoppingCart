@@ -1,0 +1,13 @@
+Conclusiones
+1. El repositorio contiene una prueba automatizada de "happy path" en la que el usuario puede agregar productos al carrito de compras, visualizarlos posteriormente y, finalmente, asegura que el flujo básico de compra funciona correctamente.
+2. Durante la prueba, se puede verificar que la interacción del usuario (en este caso, Lili) con la página es exitosa, lo que indica que la interfaz es intuitiva y responsiva.
+3. La prueba permite confirmar que los ítems seleccionados se visualizan en la sección "View cart", lo que comprueba que la funcionalidad del carrito está operativa y refleja correctamente las acciones del usuario.
+4. Al incluir el paso de "Realizar el pago", se asegura que el flujo de compra no solo permite agregar productos, sino que también concluye con el proceso de pago, lo cual es crítico para la funcionalidad de un ecommerce.
+5. El uso de Gherkin (el formato de "Given-When-Then") ayuda a mantener una documentación clara y accesible sobre el comportamiento esperado del sistema, favoreciendo la colaboración entre equipos.
+6. Al emplear SerenityBDD y Gradle con el patrón de diseño Creenplay, se facilita la escritura y el mantenimiento de pruebas, permitiendo que el equipo de desarrollo y QA entienda fácilmente los escenarios.
+7. La implementación automatizada de esta prueba garantiza que se puede ejecutar de manera rápida y repetitiva, lo que es esencial en un entorno de integración continua.
+
+Recomendaciones
+1. Por cuestiones prácticas, el repositorio contiene una única prueba automatizada de "happy path". Sin embargo, es importante considerar agregar más escenarios para cubrir diferentes tipos de productos, cantidades y situaciones, como agregar productos que no están disponibles, realizar el pago como un usuario registrado o seleccionar otro método de pago.
+2. Se pueden incluir validaciones específicas en la prueba para verificar que los productos seleccionados son los correctos y que sus precios se muestran adecuadamente en el carrito antes de realizar el pago.
+3. Los datos de prueba pueden ser considerados en un escenario Outline como examples, de modo que sean representativos y variados para cubrir diferentes condiciones de prueba.
