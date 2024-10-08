@@ -6,6 +6,7 @@ Este repositorio contiene pruebas funcionales automatizadas (E2E) para un flujo 
 - [Project Overview](#project-overview)
 - [Prerequisites](#prerequisites)
 - [Getting the Code](#getting-the-code)
+- [Configure ChromeDriver](#running-tests)
 - [Running Tests](#running-tests)
 
 
@@ -19,9 +20,25 @@ Antes de ejecutar las pruebas, asegúrate de tener instaladas las siguientes ver
 
 - **Java:** 21.0.4
 - **Gradle:** 8.5
-- **Versión de Chrome:** Versiones menores a 114.0.5735.199
+- **Versión de Chrome:**  (última versión estable)
 
 Asegúrate de que tus variables de entorno estén configuradas correctamente para Java y Gradle.
+
+### Configure ChromeDriver
+1.  Verifica la Versión de Google Chrome 
+- Abre Google Chrome. 
+- Haz clic en el menú de tres puntos en la esquina superior derecha. 
+- Selecciona Ayuda > Acerca de Google Chrome. 
+- Anota la versión de Chrome que tienes instalada (Ejemplo: 104.0.5112.79).
+
+2. Configura y prueba WebDriverManager en la Clase "BaseTest"
+- En la clase "BaseTest" se configuró el WebDriverManager para obtener la versión correcta de ChromeDriver
+
+3. En caso de tener problemas con WebDriverManager puedes realizar la instalación de forma manual, asegurandote de que ChromeDriver coincida con tu Versión de Chrome, para esto puedes seguir los siguientes pasos:
+- Visita la página de descargas de ChromeDriver.
+- Busca la versión de ChromeDriver que coincide con la versión de Chrome instalada en tu máquina.
+- Instala ChromeDriver
+
 
 ### Getting the Code
 Para clonar este repositorio, usa:
