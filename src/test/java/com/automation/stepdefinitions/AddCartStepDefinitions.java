@@ -1,4 +1,4 @@
-package starter.stepdefinitions;
+package com.automation.stepdefinitions;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
@@ -7,11 +7,11 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
-import starter.model.Payment;
-import starter.task.NavigateAndSelectItems;
-import starter.task.PayProductsMyCart;
-import starter.task.ViewCart;
-import starter.navigation.NavigateTo;
+import com.automation.model.Payment;
+import com.automation.task.NavigateAndSelectItems;
+import com.automation.task.PayProductsMyCart;
+import com.automation.task.ViewCart;
+import com.automation.page.NavigateTo;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.then;
 import static net.serenitybdd.screenplay.GivenWhenThen.when;

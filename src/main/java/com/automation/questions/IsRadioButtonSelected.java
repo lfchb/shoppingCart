@@ -1,4 +1,4 @@
-package starter.questions;
+package com.automation.questions;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;

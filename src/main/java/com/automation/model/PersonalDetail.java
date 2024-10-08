@@ -1,7 +1,4 @@
-package starter.model;
-
-import lombok.Getter;
-import lombok.Setter;
+package com.automation.model;
 
 public class PersonalDetail {
 

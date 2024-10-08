@@ -1,7 +1,7 @@
-package starter.page;
+package com.automation.page;
 
+import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.screenplay.targets.Target;
-import net.thucydides.core.pages.PageObject;
 
 public class BillingDetailsPage extends PageObject {
     public static final Target INPUT_FIRSTNAME = Target.the("'First name'").locatedBy("//input[@id='input-payment-firstname']");

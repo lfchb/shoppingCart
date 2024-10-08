@@ -1,4 +1,4 @@
-package starter.page;
+package com.automation.page;
 
 import net.serenitybdd.screenplay.targets.Target;
 import net.thucydides.core.pages.PageObject;

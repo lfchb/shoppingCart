@@ -1,13 +1,12 @@
-package starter.task;
+package com.automation.task;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import starter.model.PersonalDetail;
-import starter.page.CheckoutOptionPage;
-import starter.page.MyStorePage;
-import starter.page.ViewCartPage;
+import com.automation.model.PersonalDetail;
+import com.automation.page.CheckoutOptionPage;
+import com.automation.page.ViewCartPage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 

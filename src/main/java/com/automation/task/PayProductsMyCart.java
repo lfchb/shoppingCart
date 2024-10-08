@@ -1,16 +1,16 @@
-package starter.task;
+package com.automation.task;
 
+import com.automation.page.BillingDetailsPage;
+import com.automation.page.ConfirmOrderPage;
+import com.automation.page.DeliveryMethodPage;
+import com.automation.page.PayMethodPage;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-import starter.model.PersonalDetail;
-import starter.page.*;
-import starter.questions.IsRadioButtonSelected;
+import com.automation.model.PersonalDetail;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class PayProductsMyCart implements Task {
 
@@ -42,7 +42,6 @@ public class PayProductsMyCart implements Task {
                     SelectFromOptions.byVisibleText(personalDetail.getState()).from(BillingDetailsPage.SELECT_STATE),
                     Click.on(BillingDetailsPage.BUTTON_CONTINUE_GUEST),
                     Click.on(DeliveryMethodPage.BUTTON_SHIPPING_METHOD),
-                    WaitUntil.the(PayMethodPage.CHECK_TERMS_CONDITIONS, isVisible()).forNoMoreThan(10).seconds(),
                     SetCheckbox.of(PayMethodPage.CHECK_TERMS_CONDITIONS).toFalse().afterWaitingUntilEnabled(),
                     Click.on(PayMethodPage.CHECK_TERMS_CONDITIONS),
                     Click.on(PayMethodPage.BUTTON_PAY_METHOD),

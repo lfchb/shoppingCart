@@ -1,14 +1,18 @@
-package starter.model;
+package com.automation.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@Getter
-@Setter
-@NoArgsConstructor
 public class Payment {
     private static PersonalDetail personalDetail =  new PersonalDetail();
+
+    public Payment() {
+    }
+
+    public static void setPersonalDetail(PersonalDetail personalDetail) {
+        Payment.personalDetail = personalDetail;
+    }
+
+    public static PersonalDetail getPersonalDetail() {
+        return personalDetail;
+    }
 
     public static PersonalDetail dataPersonalDetail(){
         personalDetail.setFirstName("Liliana");

@@ -1,8 +1,10 @@
-package starter.page;
+package com.automation.page;
 
 import net.serenitybdd.screenplay.targets.Target;
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 
+@DefaultUrl("http://opencart.abstracta.us/")
 public class MyStorePage extends PageObject {
 
     public static final Target LABEL_DESKTOPS = Target.the("'Desktops'").locatedBy("//a[@class='dropdown-toggle' and text()='Desktops']");

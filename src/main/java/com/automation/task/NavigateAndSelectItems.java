@@ -1,10 +1,10 @@
-package starter.task;
+package com.automation.task;
 
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import starter.page.MyStorePage;
+import com.automation.page.MyStorePage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
