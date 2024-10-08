@@ -5,7 +5,9 @@ import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import starter.model.PersonalDetail;
+import starter.page.CheckoutOptionPage;
 import starter.page.MyStorePage;
+import starter.page.ViewCartPage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -15,15 +17,12 @@ public class ViewCart implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        //billingDetails = new BillingDetails("Liliana", "Chacha","lfcb@hotmail.es","0993556202","My company", "El Inca", "", "Quito", "593", "Ecuador", "Pichincha");
-
         actor.attemptsTo(
-                Click.on(MyStorePage.BUTTON_VIEW_CART),
-                Click.on(MyStorePage.SELECT_VIEW_CART),
-                Click.on(MyStorePage.BUTTON_CHECKOUT),
-                Click.on(MyStorePage.RADIO_GUEST_CHECKOUT),
-                Click.on(MyStorePage.BUTTON_CONTINUE)
-
+                Click.on(ViewCartPage.BUTTON_VIEW_CART),
+                Click.on(ViewCartPage.SELECT_VIEW_CART),
+                Click.on(ViewCartPage.BUTTON_CHECKOUT),
+                Click.on(CheckoutOptionPage.RADIO_GUEST_CHECKOUT),
+                Click.on(CheckoutOptionPage.BUTTON_CONTINUE)
         );
     }
 

@@ -46,6 +46,7 @@ dependencies {
             "org.junit.jupiter:junit-jupiter-engine:5.8.2",
             "org.junit.vintage:junit-vintage-engine:5.8.2",
             "org.assertj:assertj-core:${assertJVersion}"
+    testImplementation 'io.github.bonigarcia:webdrivermanager:5.5.3'
 }
 
 test {

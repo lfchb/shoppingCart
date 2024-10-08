@@ -6,7 +6,7 @@ import net.serenitybdd.screenplay.actions.*;
 import net.serenitybdd.screenplay.ensure.Ensure;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import starter.model.PersonalDetail;
-import starter.page.MyStorePage;
+import starter.page.*;
 import starter.questions.IsRadioButtonSelected;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -28,34 +28,27 @@ public class PayProductsMyCart implements Task {
     public <T extends Actor> void performAs(T actor) {
         try{
             actor.attemptsTo(
-                    Enter.theValue(personalDetail.getFirstName()).into(MyStorePage.INPUT_FIRSTNAME),
-                    Enter.theValue(personalDetail.getLastName()).into(MyStorePage.INPUT_LASTNAME),
-                    Enter.theValue(personalDetail.getEmail()).into(MyStorePage.INPUT_EMAIL),
-                    Enter.theValue(personalDetail.getTelephone()).into(MyStorePage.INPUT_TELEPHONE),
-                    Enter.theValue(personalDetail.getCompany()).into(MyStorePage.INPUT_COMPANY),
-                    Enter.theValue(personalDetail.getAddress1()).into(MyStorePage.INPUT_ADRESS1),
-                    Enter.theValue(personalDetail.getAddress2()).into(MyStorePage.INPUT_ADRESS2),
-                    Enter.theValue(personalDetail.getCity()).into(MyStorePage.INPUT_CITY),
-                    Enter.theValue(personalDetail.getPostCode()).into(MyStorePage.INPUT_POST_CODE),
-                    WaitForElementTask.visible(MyStorePage.SELECT_COUNTRY),
-                    SelectFromOptions.byVisibleText(personalDetail.getCountry()).from(MyStorePage.SELECT_COUNTRY),
-                    SelectFromOptions.byVisibleText(personalDetail.getState()).from(MyStorePage.SELECT_STATE),
-                    Click.on(MyStorePage.BUTTON_CONTINUE_GUEST),
-                    Click.on(MyStorePage.BUTTON_SHIPPING_METHOD),
-                    WaitUntil.the(MyStorePage.CHECK_TERMS_CONDITIONS, isVisible()).forNoMoreThan(10).seconds(),
-                    SetCheckbox.of(MyStorePage.CHECK_TERMS_CONDITIONS).toFalse().afterWaitingUntilEnabled(),
-                    Click.on(MyStorePage.CHECK_TERMS_CONDITIONS),
-                    Click.on(MyStorePage.BUTTON_PAY_METHOD),
-                    Click.on(MyStorePage.BUTTON_PAY_CONFIRM),
-                    Ensure.that(MyStorePage.MESSAGE_SUCCESS_PROCESS).hasText("Your order has been placed!")
+                    Enter.theValue(personalDetail.getFirstName()).into(BillingDetailsPage.INPUT_FIRSTNAME),
+                    Enter.theValue(personalDetail.getLastName()).into(BillingDetailsPage.INPUT_LASTNAME),
+                    Enter.theValue(personalDetail.getEmail()).into(BillingDetailsPage.INPUT_EMAIL),
+                    Enter.theValue(personalDetail.getTelephone()).into(BillingDetailsPage.INPUT_TELEPHONE),
+                    Enter.theValue(personalDetail.getCompany()).into(BillingDetailsPage.INPUT_COMPANY),
+                    Enter.theValue(personalDetail.getAddress1()).into(BillingDetailsPage.INPUT_ADRESS1),
+                    Enter.theValue(personalDetail.getAddress2()).into(BillingDetailsPage.INPUT_ADRESS2),
+                    Enter.theValue(personalDetail.getCity()).into(BillingDetailsPage.INPUT_CITY),
+                    Enter.theValue(personalDetail.getPostCode()).into(BillingDetailsPage.INPUT_POST_CODE),
+                    WaitForElementTask.visible(BillingDetailsPage.SELECT_COUNTRY),
+                    SelectFromOptions.byVisibleText(personalDetail.getCountry()).from(BillingDetailsPage.SELECT_COUNTRY),
+                    SelectFromOptions.byVisibleText(personalDetail.getState()).from(BillingDetailsPage.SELECT_STATE),
+                    Click.on(BillingDetailsPage.BUTTON_CONTINUE_GUEST),
+                    Click.on(DeliveryMethodPage.BUTTON_SHIPPING_METHOD),
+                    WaitUntil.the(PayMethodPage.CHECK_TERMS_CONDITIONS, isVisible()).forNoMoreThan(10).seconds(),
+                    SetCheckbox.of(PayMethodPage.CHECK_TERMS_CONDITIONS).toFalse().afterWaitingUntilEnabled(),
+                    Click.on(PayMethodPage.CHECK_TERMS_CONDITIONS),
+                    Click.on(PayMethodPage.BUTTON_PAY_METHOD),
+                    Click.on(PayMethodPage.BUTTON_PAY_CONFIRM),
+                    Ensure.that(ConfirmOrderPage.MESSAGE_SUCCESS_PROCESS).hasText("Your order has been placed!")
             );
-
-            boolean isSelected = IsRadioButtonSelected.forTarget(MyStorePage.CHECK_TERMS_CONDITIONS).answeredBy(actor);
-            System.out.println("*** Es seleccionado?? " + isSelected);
-            if (!isSelected) {
-                throw new RuntimeException("El radio button no está seleccionado.");
-            }
-
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }

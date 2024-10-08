@@ -1,5 +1,6 @@
 package starter.stepdefinitions;
 
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,13 +22,14 @@ public class AddCartStepDefinitions {
 
     String name;
 
+    @Before
     public void setTheStage(){
         OnStage.setTheStage(new OnlineCast());
     }
 
     @Given("^(.*) visita la pagina Your Store$")
     public void visita_la_pagina_your_store(String actor) {
-        theActorCalled(actor).attemptsTo(NavigateTo.theDuckDuckGoHomePage());
+        theActorCalled(actor).attemptsTo(NavigateTo.myStorePage());
     }
 
     @When("Agrega productos al carrito de compras")
